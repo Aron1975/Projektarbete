@@ -116,7 +116,7 @@
             <button
               type="button"
               class="btn btn-primary btn-lg"
-              onclick="validateForm()"
+              onclick=""
             >
               Gör beställning
             </button>
@@ -135,71 +135,7 @@
         </div>
       </div>
     </div>
-
-    <script>
-      function validateForm() {
-        //Validerar kund information enligt uppgiftens krav
-        clearErrors();
-
-        var firstname = document.getElementById("firstname").value;
-        var surname = document.getElementById("surname").value;
-        var email = document.getElementById("email").value;
-        var phonenumber = document.getElementById("phonenumber").value;
-        var streetaddress = document.getElementById("streetaddress").value;
-        var zipcode = document.getElementById("zipcode").value;
-        var location = document.getElementById("location").value;
-
-        var nameRegex = /^[a-zA-Z]{2,50}$/;
-        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        var phoneRegex = /^[0-9()\-\s+]{0,50}$/;
-        var addressRegex = /^[a-zA-Z0-9\s,.'-]{2,50}$/;
-        var zipcodeRegex = /^\d{5}$/;
-
-        var valid = true;
-
-        if (!nameRegex.test(firstname)) {
-          document.getElementById("firstname-error").innerText =
-            "Namnet är minst 2 tecken och max 50 tecken";
-          valid = false;
-        }
-
-        if (!nameRegex.test(surname)) {
-          document.getElementById("surname-error").innerText =
-            "Namnet är minst 2 tecken och max 50 tecken.";
-          valid = false;
-        }
-
-        if (!emailRegex.test(email)) {
-          document.getElementById("email-error").innerText =
-            "E-postadressen måste innehålla @ och max 50 tecken.";
-          valid = false;
-        }
-
-        if (!phoneRegex.test(phonenumber)) {
-          document.getElementById("phonenumber-error").innerText =
-            "Telefonnummer får innehålla siffror, bindestreck och parenteser. Max 50 tecken.";
-          valid = false;
-        }
-
-        if (!addressRegex.test(streetaddress)) {
-          document.getElementById("streetaddress-error").innerText =
-            "Min 2 tecken och Max 50 tecken.";
-          valid = false;
-        }
-
-        if (!zipcodeRegex.test(zipcode)) {
-          document.getElementById("zipcode-error").innerText =
-            "Exakt 5 siffror.";
-          valid = false;
-        }
-
-        if (!addressRegex.test(location)) {
-          document.getElementById("location-error").innerText =
-            "Min 2 tecken och Max 50 tecken.";
-        }
-      }
-    </script>
-
+  </div>
     <script>
       //Hämtar den valda produktens information och visar den på skärmen
       window.onload = function () {
