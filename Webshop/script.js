@@ -1,42 +1,85 @@
-const item = {
-    name: "Item 1",
-    description: "Desc",
-    price: 50,
-    info: "Info",
-    image: ""
-  };
+fetch('https://fakestoreapi.com/products')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(products => {
+        const productListContainer = document.getElementById('product-list');
 
-  function addCard(){
-    const pris = document.createElement("p");
-    const info = document.createElement("p");
-    const h = document.createElement("h4");
-    const div1 = document.createElement("div");
-    const div2 = document.createElement("div");
-    const div3 = document.createElement("div");
-    pris.classList.add("card-text");
-    info.classList.add("card-text");
-    div1.classList.add("card-body");
-    div2.classList.add("card");
-    div3.classList.add("col");
-    let node = document.createTextNode(item.price);
-    pris.appendChild(node);
-    node = document.createTextNode(item.info);
-    info.appendChild(node);
-    node = document.createTextNode(item.name);
-    h.appendChild(node);
-    div1.appendChild(h);
-    div1.appendChild(pris);
-    div1.appendChild(info);
-    div2.appendChild(div1);
-    div3.appendChild(div2);
+        products.forEach(product => {
+            const productCard = document.createElement('div');
+            productCard.classList.add('card', 'mb-3');
 
-    const element = document.getElementById("tabell");
-    element.appendChild(div3);
+            const basicInfoSection = document.createElement('div');
+            basicInfoSection.classList.add('card-body');
 
-  }
+            const productName = document.createElement('h5');
+            productName.classList.add('card-title');
+            productName.textContent = product.title;
 
-  function createImage(){
-    const myImage = new Image(100, 200);
-    myImage.src = "picture.jpg";
-    document.body.appendChild(myImage);
-  }
+            const productImage = document.createElement('img');
+            productImage.classList.add('card-img-top');
+            productImage.setAttribute('src', product.image);
+            productImage.setAttribute('alt', product.title);
+
+            basicInfoSection.appendChild(productName);
+            basicInfoSection.appendChild(productImage);
+
+            productCard.appendChild(basicInfoSection);
+
+
+            const additionalInfoSection = document.createElement('div');
+            additionalInfoSection.classList.add('card-body', 'additional-info');
+            additionalInfoSection.style.display = 'none'; 
+
+            const productDescription = document.createElement('p');
+            productDescription.classList.add('card-text');
+            productDescription.textContent = product.description;
+
+            const productPrice = document.createElement('p');
+            productPrice.classList.add('card-text', 'text-muted');
+            productPrice.textContent = `Price: $${product.price}`;
+
+            const quantityLabel = document.createElement('label');
+            quantityLabel.textContent = 'Antal:';
+
+            const quantityDropdown = document.createElement('select');
+            quantityDropdown.classList.add('form-select');
+            for (let i = 1; i <= 8; i++) {
+                const option = document.createElement('option');
+                option.value = i;
+                option.textContent = i;
+                quantityDropdown.appendChild(option);
+            }
+
+            const orderButton = document.createElement('button');
+            orderButton.classList.add('btn', 'btn-primary');
+            orderButton.textContent = 'Beställ';
+
+            orderButton.addEventListener('click', () => {
+            window.location.href = `beställning.html?productId=${product.id}`;});
+
+            additionalInfoSection.appendChild(productDescription);
+            additionalInfoSection.appendChild(productPrice);
+            additionalInfoSection.appendChild(quantityLabel);
+            additionalInfoSection.appendChild(quantityDropdown);
+            additionalInfoSection.appendChild(orderButton);
+
+            productCard.appendChild(additionalInfoSection);
+
+            productCard.addEventListener('mouseenter', () => {
+                additionalInfoSection.style.display = 'block'; 
+            });
+
+            productCard.addEventListener('mouseleave', () => {
+                additionalInfoSection.style.display = 'none';
+            });
+
+            productListContainer.appendChild(productCard);
+        });
+    })
+    .catch(error => {
+        console.error('There was a problem with your fetch operation:', error);
+    });
