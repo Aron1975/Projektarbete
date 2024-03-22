@@ -55,6 +55,8 @@
               class="form-control form-control-lg"
               id="firstname"
               placeholder="Förnamn"
+              minlength="2"
+              maxlength="25"
             />
             <span id="firstname-error" class="text-danger"></span>
           </div>
@@ -64,6 +66,8 @@
               class="form-control form-control-lg"
               id="surname"
               placeholder="Efternamn"
+              minlength="2"
+              maxlength="25"
             />
             <span id="surname-error" class="text-danger"></span>
           </div>
@@ -73,6 +77,7 @@
               class="form-control form-control-lg"
               id="email"
               placeholder="E-post"
+              maxlength="50"
             />
             <span id="email-error" class="text-danger"></span>
           </div>
@@ -82,6 +87,8 @@
               class="form-control form-control-lg"
               id="phonenumber"
               placeholder="Telefonnummer"
+              maxlength="50"
+              pattern="[0-9\-\(\)]*"
             />
             <span id="phonenumber-error" class="text-danger"></span>
           </div>
@@ -91,6 +98,8 @@
               class="form-control form-control-lg"
               id="streetaddress"
               placeholder="Gatuadress"
+              minlength="2"
+              maxlength="50"
             />
             <span id="streetaddress-error" class="text-danger"></span>
           </div>
@@ -100,15 +109,19 @@
               class="form-control form-control-lg"
               id="zipcode"
               placeholder="Postnummer"
+              pattern="[0-9][0-9][0-9][0-9][0-9]"
+            
             />
             <span id="zipcode-error" class="text-danger"></span>
           </div>
           <div class="row m-3">
             <input
-              type="text"
+              type="tel"
               class="form-control form-control-lg"
               id="location"
               placeholder="Postort"
+              minlength="2"
+              maxlength="50"
             />
             <span id="location-error" class="text-danger"></span>
           </div>
