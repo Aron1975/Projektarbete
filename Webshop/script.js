@@ -32,7 +32,7 @@ fetch('https://fakestoreapi.com/products')
 
             const additionalInfoSection = document.createElement('div');
             additionalInfoSection.classList.add('card-body', 'additional-info');
-            additionalInfoSection.style.display = 'none'; 
+            additionalInfoSection.style.display = 'none';
 
             const productDescription = document.createElement('p');
             productDescription.classList.add('card-text');
@@ -59,7 +59,8 @@ fetch('https://fakestoreapi.com/products')
             orderButton.textContent = 'Beställ';
 
             orderButton.addEventListener('click', () => {
-            window.location.href = `beställning.html?productId=${product.id}`;});
+                window.location.href = `beställning.html?productId=${product.id}`;
+            });
 
             additionalInfoSection.appendChild(productDescription);
             additionalInfoSection.appendChild(productPrice);
@@ -70,7 +71,7 @@ fetch('https://fakestoreapi.com/products')
             productCard.appendChild(additionalInfoSection);
 
             productCard.addEventListener('mouseenter', () => {
-                additionalInfoSection.style.display = 'block'; 
+                additionalInfoSection.style.display = 'block';
             });
 
             productCard.addEventListener('mouseleave', () => {
@@ -83,3 +84,30 @@ fetch('https://fakestoreapi.com/products')
     .catch(error => {
         console.error('There was a problem with your fetch operation:', error);
     });
+
+
+
+(function () {
+    'use strict'
+  
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.querySelectorAll('.needs-validation')
+  
+    // Loop over them and prevent submission
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+
+            var urlParams = new URLSearchParams(window.location.search);
+            var productId = urlParams.get('productId');
+            window.location.href = `beställning.html?productId=${productId}`;
+            
+          }
+  
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })()
