@@ -1,12 +1,34 @@
 let nr = 0;
 
+
 const item = {
     name: "Item",
     description: "Desc",
-    price: 50,
+    price: 1,
     info: "Info",
-    image: "images/ballon768x482.jpg"
+    image: " "
   };
+
+  for (let i = 1; i < 21; i++) {
+    item.name = "Item"+i;
+    item.price = Math.round((Math.random())*100);
+    item.image = random_img();
+    addCard();
+  }
+
+  function random_img(){
+    let s = Math.floor((Math.random())*4);
+    switch(s){
+      case 0: return "images/ballon768x482.jpg";
+      break;
+      case 1: return "images/eggseaster600x400.jpg";
+      break;
+      case 2: return "images/money600x400.jpg";
+      break;
+      case 3: return "images/wallclock600x400.jpg";
+      break;
+    }
+  }
 
   function addCard(){
     const pris = document.createElement("p");
@@ -28,6 +50,7 @@ const item = {
     info.appendChild(node);
     pic.src = item.image;
     pic.style="width:100%";
+    pic.alt="Card image";
     node = document.createTextNode(item.name);
     h.appendChild(node);
     div1.appendChild(h);
@@ -41,39 +64,31 @@ const item = {
     div1.setAttribute('onclick', "javascript: itemClicked(this.id)");
     const element = document.getElementById("tabell");
     element.appendChild(div3);
-    alert(document.getElementById(myId).id);
+    //alert(document.getElementById(myId).id);
     nr++;
   }
 
-  function createImage(){
-    const myImage = new Image(100, 200);
-    myImage.src = "picture.jpg";
-    document.body.appendChild(myImage);
-  }
-
-  //document.getElementsByClassName("card-prop").onClick = itemClicked(id);
-  //document.getElementById("card-mouse-over").addEventListener("mouseover", mouseOver);
-   
-
   function itemClicked(id){
     //alert("Mouse over: " + id);
-    //let pic = document.getElementById("id").getElementsByTagName("img").src;
-    //let name = document.getElementById(id).childNodes[0].textContent;
     console.log("Id: " + id);
     let childs = document.getElementById(id).childNodes;
     childs.forEach((child, index) => {
         console.log("index: " + index + " " + child);
         console.log("index: " + index + " " + child.textContent);
     });
-    let name = document.getElementById(id).childNodes[1].textContent;
-    let imgSrc = document.getElementById(id).childNodes[3].src;
-    let info = document.getElementById(id).childNodes[5]. textContent;
-    let pris = document.getElementById(id).childNodes[7]. textContent;
-    //alert("id:" + id + "Name: " + name);
-    //let node = document.createTextNode(name);
-    //pris.appendChild(node);
-    document.getElementById("info-card").childNodes[1].textContent = name;
+    let name = document.getElementById(id).childNodes[0].textContent;
+    let imgSrc = document.getElementById(id).childNodes[1].src;
+    let info = document.getElementById(id).childNodes[2]. textContent;
+    let pris = document.getElementById(id).childNodes[3]. textContent;
+
+    document.getElementById("prodspec-name").textContent = name;
     //document.getElementById("info-card").childNodes[3].textContent = name;
-    document.getElementById("info-card").childNodes[5].textContent = info + " " + pris;
+    document.getElementById("prodspec-info").textContent = info + "Lorem lkvn<vn<,v <v m vmd bd bmzx bmzcx cmn .zcxbzd.nbdbnznbzcxbnzcxnbzcxnbzcxbnzcxbnzcxbnzcxbn" + pris;
     //console.log(document.target.id);
+    document.getElementById("prodspec-img").src = imgSrc;
+
+    var myModal = new bootstrap.Modal(document.getElementById('myModal'), { 
+      keyboard: false 
+    }) 
+    myModal.show() 
   }

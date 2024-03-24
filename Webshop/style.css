@@ -1,7 +1,116 @@
 body{
-    background-color: blanchedalmond
+    background-image: url("images/bakgrund.jpg");
+    background-position: center;
+    background-color: blanchedalmond;
+    border: 25px solid groove black;
+    margin: 0;
+    border-bottom: none;
+    border-style: groove;
 }
 
 nav{
-    background-color:rgb(237, 222, 202);
+    background-color:rgba(8, 35, 8, 0.792);
 }
+
+.nav-link {
+    color: rgb(201, 201, 210);
+}
+
+
+
+#mb{
+    font-style: italic; 
+    font-family:  Helvetica, Arial, sans-serif; 
+    font-weight: bold; 
+    color: rgb(207, 206, 205); 
+    font-size: 50px; 
+    
+    line-height: 1em;
+}
+
+#mb1{
+    font-style: italic; 
+    font-family:  Helvetica, Arial, sans-serif; 
+    font-weight:normal; 
+    color: rgb(207, 206, 205); 
+    font-size: 25px;  
+    /*display: inline-block;*/
+    transform: scale(1.25, 1);
+    
+}
+
+#lll{
+    background-color:rgba(3, 29, 9, 0.785) ;
+    padding: 1px;
+}
+
+h3{
+    color: rgb(207, 206, 205); 
+}
+
+.card-prop{
+    width:10rem;
+    font-size: 14px;
+    height: 13rem;
+    color: rgb(205, 231, 205);
+    background-color: rgba(5, 16, 2, 0.936);
+}
+
+h4{
+    font-size: 17px;
+}
+/*
+.card-prod-info{
+    margin-top: 1rem; 
+    max-width: 280px;
+    background-color: rgba(238, 227, 211, 0.895);
+}*/
+
+div.modal-header{
+    background-color: rgb(237, 222, 202);
+}
+
+.modal-body {
+    background-color: blanchedalmond;
+    position:relative; /* This avoids whatever it's absolute inside of it to go off the container */
+    height: 250px; /* let's imagine that your login box height is 250px . This height needs to be added, otherwise .img-responsive will be like "Oh no, I need to be vertically aligned?! but from which value I need to be aligned??" */
+ }
+
+ div.modal-footer{
+    background-color: rgb(237, 222, 202);
+ }
+
+.img-responsive {
+    height: 380px;
+    width: 500px; /* This value will depend on what size you want for your loading image, let's say it's 50px */
+    
+
+   /* position:absolute;
+    left:50%;
+    top:50%;
+
+    margin-top:-250px; /* This needs to be half of the height */
+    /*margin-left:-250px; /* This needs to be half of the width */
+}
+/*
+#prodspec-info{
+    text-align: center;
+}*/
+
+div.item {
+    vertical-align: top;
+    display: inline-block;
+    text-align: center;
+    width: 120px;
+}
+
+/*
+img {
+    width: 100px;
+    height: 100px;
+    background-color: grey;
+}*/
+/*
+.caption {
+    display: block;
+}*/

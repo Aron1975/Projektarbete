@@ -39,7 +39,7 @@
                 </ul>
             </div>
     </nav>
-    <div class="container">
+    <div class="container bg-dark">
         <h1 class="text-center">Webshop</h1>
         <h2 class="text-center text-secondary"><p style="font-style: italic; font-family:  Helvetica, Arial, sans-serif;">S.E.A</p></h2>
     </div>
@@ -49,71 +49,74 @@
             <h3>Sortiment</h3>
         </div>
         <div class="col-4 mt-1 text-center">
-            <h3>Produkt Info</h3>
+            <!--h3>Produkt Info</h3-->
         </div>
     </div>
     <div class="row align-items-start">
-        <div class="col-8 mt-1 text-center">
-             <div class="container">
+        <div class="col-sm-6 col-md-8 mt-1 text-center">
+             <!--div class="container"-->
                 <div id="tabell" class="row row-cols1 row-cols-sm-2 row-cols-md-3 row cols-lg4 g-3">
                   
                     <div class="col">
 
                         <!--div class="card-group"-->
-                        <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">All seeing eye</h4> 
-                            <img class="card-img-top" src="https://picography.co/wp-content/uploads/2022/12/picography-macro-paper-money-005-600x400.jpg" alt="Card image" style="width:100%">  
-                            <p class="card-text">Info</p>
-                            <p class="card-text">Pris</p>
-                        </div>
+                        <div class="card  card-prop">
+                            <div id="card-mouse-over" class="card-body">
+                                <h4 class="card-title">All seeing eye</h4> 
+                                <img class="card-img-top" src="https://picography.co/wp-content/uploads/2022/12/picography-macro-paper-money-005-600x400.jpg" alt="Card image" style="width:100%">  
+                                <p class="card-text">Info</p>
+                                <p class="card-text">Pris</p>
+                            </div>
                         </div>
 
                     </div>
                     <div class="col">
-                        <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">Easter eggs</h4>
-                            <img class="card-img-top" src="https://picography.co/wp-content/uploads/2022/12/picography-ukrainian-eggs-easter-05-600x400.jpg" alt="Card image" style="width:100%">  
-                            <p class="card-text">Info</p>
-                            <p class="card-text">Pris</p>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title">Wall Clock</h4>
-                            <img class="card-img-top" src="https://picography.co/wp-content/uploads/2018/09/picography-white-wall-clock-red-background-small-2-600x400.jpg" alt="Card image" style="width:100%">  
-                            <p class="card-text">Info</p>
-                            <p class="card-text">Pris</p>
-                        </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card">
+                        <div class="card card-prop">
                             <div class="card-body">
-                            <h4 class="card-title">Balloon</h4>
-                            <img class="card-img-top" src="https://picography.co/wp-content/uploads/2022/12/picography-hot-air-ballon-background-768x482.jpg" alt="Card image" style="width:100%">  
-                            <p class="card-text">Info</p>
-                            <p class="card-text">Pris</p>
+                                <h4 class="card-title">Easter eggs</h4>
+                                <img class="card-img-top" src="https://picography.co/wp-content/uploads/2022/12/picography-ukrainian-eggs-easter-05-600x400.jpg" alt="Card image" style="width:100%">  
+                                <p class="card-text">Info</p>
+                                <p class="card-text">Pris</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card card-prop">
+                            <div class="card-body" id= "card10" onclick="itemClicked(id)">
+                                <h4 class="card-title">Wall Clock</h4>
+                                <img class="card-img-top" src="https://picography.co/wp-content/uploads/2018/09/picography-white-wall-clock-red-background-small-2-600x400.jpg" alt="Card image" style="width:100%">  
+                                <p class="card-text">Info</p>
+                                <p class="card-text">Pris</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card card-prop">
+                            <div class="card-body">
+                                <h4 class="card-title">Balloon</h4>
+                                <img class="card-img-top" src="https://picography.co/wp-content/uploads/2022/12/picography-hot-air-ballon-background-768x482.jpg" alt="Card image" style="width:100%">  
+                                <p class="card-text">Info</p>
+                                <p class="card-text">Pris</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
-        <div class="col-4 text-center border border-secondary border-2 rounded " style="background-color: antiquewhite">
-            <img class="card-img-top" src="https://picography.co/wp-content/uploads/2022/12/picography-macro-paper-money-005-600x400.jpg"  alt="Image" style="width:100%">  
+        <div class="col-sm-6 col-md-4 text-center  justify-content-center">
+            <div class="card card-prod-info">
+                <div class="card-body" id="info-card">
+                     <h3>Produkt Info</h3>
+                     <img class="card-img-top" src="https://picography.co/wp-content/uploads/2022/12/picography-macro-paper-money-005-600x400.jpg"  alt="Image" style="width:100%">  
 
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Corrupti dolorum temporibus, facilis recusandae exercitationem distinctio
-                quibusdam nesciunt corporis nobis repellendus amet, praesentium enim culpa quos
-                similique dignissimos! Voluptatem, illo. Perspiciatis!
-            </p>
-            <button type="button" class="mx-1" onclick="addCard()">Add</button>
-
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Corrupti dolorum temporibus, facilis recusandae exercitationem distinctio
+                        quibusdam nesciunt corporis nobis repellendus amet, praesentium enim culpa quos
+                        similique dignissimos! Voluptatem, illo. Perspiciatis!
+                    </p>
+                    <button type="button" class="mx-1" onclick="addCard()">Add</button>
+                </div>
+             </div>
         </div>
     </div>
     <script src="script.js"></script>
