@@ -72,10 +72,12 @@ fetch('https://fakestoreapi.com/products')
 
             productCard.addEventListener('mouseenter', () => {
                 additionalInfoSection.style.display = 'block';
+                productImage.style.maxWidth = "fit-content";
             });
 
             productCard.addEventListener('mouseleave', () => {
                 additionalInfoSection.style.display = 'none';
+                productImage.style.maxWidth = "20%";
             });
 
             productListContainer.appendChild(productCard);
