@@ -1,5 +1,6 @@
 body{
-    background-color: blanchedalmond
+    background-color: blanchedalmond;
+    background-image: linear-gradient(rgb(228, 218, 202), rgb(239, 201, 193));
 }
 
 nav{
@@ -14,7 +15,8 @@ nav{
 }
 
 .product-info { 
-    background-color: lightgray;
+    background-color: rgb(210, 191, 191);
+    margin-top: 4rem;
 }
 
 .product-info .card {

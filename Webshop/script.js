@@ -29,7 +29,6 @@ fetch('https://fakestoreapi.com/products')
 
             productCard.appendChild(basicInfoSection);
 
-
             const additionalInfoSection = document.createElement('div');
             additionalInfoSection.classList.add('card-body', 'additional-info');
             additionalInfoSection.style.display = 'none';
@@ -59,6 +58,7 @@ fetch('https://fakestoreapi.com/products')
             orderButton.textContent = 'Beställ';
 
             orderButton.addEventListener('click', () => {
+                localStorage.setItem("prodId", product.id);
                 window.location.href = `beställning.html?productId=${product.id}`;
             });
 
@@ -72,42 +72,17 @@ fetch('https://fakestoreapi.com/products')
 
             productCard.addEventListener('mouseenter', () => {
                 additionalInfoSection.style.display = 'block';
+                productImage.style.maxWidth = "fit-content";
             });
 
             productCard.addEventListener('mouseleave', () => {
                 additionalInfoSection.style.display = 'none';
+                productImage.style.maxWidth = "20%";
             });
 
             productListContainer.appendChild(productCard);
         });
     })
     .catch(error => {
-        console.error('There was a problem with your fetch operation:', error);
+        console.error('There was a problem with your fetch operation1:', error);
     });
-
-
-
-(function () {
-    'use strict'
-  
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    var forms = document.querySelectorAll('.needs-validation')
-  
-    // Loop over them and prevent submission
-    Array.prototype.slice.call(forms)
-      .forEach(function (form) {
-        form.addEventListener('submit', function (event) {
-          if (!form.checkValidity()) {
-            event.preventDefault();
-            event.stopPropagation();
-
-            var urlParams = new URLSearchParams(window.location.search);
-            var productId = urlParams.get('productId');
-            window.location.href = `beställning.html?productId=${productId}`;
-            
-          }
-  
-          form.classList.add('was-validated')
-        }, false)
-      })
-  })()
