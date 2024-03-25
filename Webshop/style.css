@@ -30,3 +30,31 @@ input:invalid {
     border-radius: 5px;
   }
 
+  .box {
+    border: 2px solid rgb(210, 199, 221);
+    background-color: lightgray;
+    background-image: "C:/Users/Nackademin/Frontend/Projektarbete/Webshop/images/ballon768x482.jpg";
+    background-color: #cccccc;
+    background-image: linear-gradient(rgb(237, 200, 200), rgb(201, 198, 187));
+    padding: 10px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: -20%;
+    max-width: 300px;
+    height: auto;
+    text-align: center;
+    }
+
+    .inline {
+        display: block;
+
+      }
+
+    .inline p{
+        margin: 3px;
+    }
+
+  .container{
+    text-align: start;
+    align-content: center;
+  }
