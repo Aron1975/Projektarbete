@@ -47,20 +47,32 @@
             <input type="text" class="form-control form-control-lg" id="firstname" name="firstname" placeholder="Förnamn" minlength="2"
               maxlength="25" required/>
             <span id="firstname-error" class="text-danger"></span>
+            <div class="invalid-feedback">
+              Namnet är för långt eller för kort.
+            </div>
           </div>
           <div class="row m-3">
             <input type="text" class="form-control form-control-lg" id="surname" name="surname" placeholder="Efternamn" minlength="2"
               maxlength="25" required/>
             <span id="surname-error" class="text-danger"></span>
+            <div class="invalid-feedback">
+              Namnet är för långt eller för kort.
+            </div>
           </div>
           <div class="row m-3">
             <input type="email" class="form-control form-control-lg" id="email" name="email" placeholder="E-post" maxlength="50" required/>
             <span id="email-error" class="text-danger"></span>
+            <div class="invalid-feedback">
+              Mailadressen måste innehålla '@'
+            </div>
           </div>
           <div class="row m-3">
-            <input type="text" class="form-control form-control-lg" id="phonenumber" name="phonenumber" placeholder="Telefonnummer"
+            <input type="tel" class="form-control form-control-lg" id="phonenumber" name="phonenumber" placeholder="Telefonnummer"
               maxlength="50" pattern="[0-9\-\(\)]*" required/>
             <span id="phonenumber-error" class="text-danger"></span>
+            <div class="invalid-feedback">
+              Telefonnummer får bara innehåller siffror, parenteser och bindestreck.
+            </div>
           </div>
           <div class="row m-3">
             <input type="text" class="form-control form-control-lg" id="streetaddress" name="streetaddress" placeholder="Gatuadress "
@@ -71,14 +83,20 @@
               </div>
           </div>
           <div class="row m-3">
-            <input type="text" class="form-control form-control-lg" id="zipcode" name="zipcode" placeholder="Postnummer"
+            <input type="tel" class="form-control form-control-lg" id="zipcode" name="zipcode" placeholder="Postnummer"
               pattern="[0-9][0-9][0-9][0-9][0-9]" required/>
             <span id="zipcode-error" class="text-danger"></span>
+            <div class="invalid-feedback">
+              Postnummret måste vara fem siffor.
+            </div>
           </div>
           <div class="row m-3">
-            <input type="tel" class="form-control form-control-lg" id="location" name="location" placeholder="Postort" minlength="2"
+            <input type="text" class="form-control form-control-lg" id="location" name="location" placeholder="Postort" minlength="2"
               maxlength="50" required/>
             <span id="location-error" class="text-danger"></span>
+            <div class="invalid-feedback">
+              Ortnamnet är för långt eller för kort.
+            </div>
           </div>
           <div class="row m-3">
             <button type="button" class="btn btn-primary btn-lg" id="submit-button">Slutför beställning</button>
