@@ -40,19 +40,7 @@ fetch('https://fakestoreapi.com/products')
             const productPrice = document.createElement('p');
             productPrice.classList.add('card-text', 'text-muted');
             productPrice.textContent = `Price: $${product.price}`;
-
-            const quantityLabel = document.createElement('label');
-            quantityLabel.textContent = 'Antal:';
-
-            const quantityDropdown = document.createElement('select');
-            quantityDropdown.classList.add('form-select');
-            for (let i = 1; i <= 8; i++) {
-                const option = document.createElement('option');
-                option.value = i;
-                option.textContent = i;
-                quantityDropdown.appendChild(option);
-            }
-
+            
             const orderButton = document.createElement('button');
             orderButton.classList.add('btn', 'btn-primary');
             orderButton.textContent = 'Beställ';
@@ -64,15 +52,13 @@ fetch('https://fakestoreapi.com/products')
 
             additionalInfoSection.appendChild(productDescription);
             additionalInfoSection.appendChild(productPrice);
-            additionalInfoSection.appendChild(quantityLabel);
-            additionalInfoSection.appendChild(quantityDropdown);
             additionalInfoSection.appendChild(orderButton);
 
             productCard.appendChild(additionalInfoSection);
 
             productCard.addEventListener('mouseenter', () => {
                 additionalInfoSection.style.display = 'block';
-                productImage.style.maxWidth = "fit-content";
+                productImage.style.maxWidth = "20%";
             });
 
             productCard.addEventListener('mouseleave', () => {
