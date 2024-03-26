@@ -40,7 +40,7 @@ fetch('https://fakestoreapi.com/products')
             const productPrice = document.createElement('p');
             productPrice.classList.add('card-text', 'text-muted');
             productPrice.textContent = `Price: $${product.price}`;
-            
+
             const orderButton = document.createElement('button');
             orderButton.classList.add('btn', 'btn-primary');
             orderButton.textContent = 'Beställ';
@@ -56,19 +56,46 @@ fetch('https://fakestoreapi.com/products')
 
             productCard.appendChild(additionalInfoSection);
 
-            productCard.addEventListener('mouseenter', () => {
+            function handleMouseEnter() {
                 additionalInfoSection.style.display = 'block';
                 productImage.style.maxWidth = "20%";
-            });
-
-            productCard.addEventListener('mouseleave', () => {
+            }
+            
+            function handleMouseLeave() {
                 additionalInfoSection.style.display = 'none';
                 productImage.style.maxWidth = "20%";
-            });
+            }
 
+            function handleClickOutside(event) {
+                if (!productCard.contains(event.target)) {
+                    productCard.classList.remove('expanded');
+                }
+            }
+            document.body.addEventListener('click', handleClickOutside);
+            
             productListContainer.appendChild(productCard);
+            productCard.addEventListener('mouseenter', handleMouseEnter);
+            productCard.addEventListener('mouseleave', handleMouseLeave);
+
+            productCard.addEventListener('click', (event) => {
+                const orderButton = event.target.closest('.btn-primary');
+                if (orderButton) {
+                    localStorage.setItem("prodId", product.id);
+                    window.location.href = `beställning.html?productId=${product.id}`;
+                } else {
+                    if (productCard.classList.contains('expanded')) {
+                        productCard.classList.remove('expanded');
+                        productCard.addEventListener('mouseenter', handleMouseEnter);
+                        productCard.addEventListener('mouseleave', handleMouseLeave);
+                    } else {
+                        productCard.classList.add('expanded');
+                        productCard.removeEventListener('mouseenter', handleMouseEnter);
+                        productCard.removeEventListener('mouseleave', handleMouseLeave);
+                    }
+                }
+            });
+            });
+        })
+        .catch(error => {
+            console.error('There was a problem with your fetch operation1:', error);
         });
-    })
-    .catch(error => {
-        console.error('There was a problem with your fetch operation1:', error);
-    });
