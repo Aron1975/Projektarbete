@@ -58,3 +58,38 @@ input:invalid {
     text-align: start;
     align-content: center;
   }
+  .expanded {
+    width: 80%;
+    height: auto;
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    z-index: 9999;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    overflow: auto;
+}
+
+.expanded .card-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333; 
+}
+
+.expanded .card-text {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+}
+
+.expanded .btn-primary {
+    margin-top: 20px;
+    background-color: #007bff; 
+    border-color: #007bff; 
+}
+
+.expanded .card-img-top {
+    max-width: 500px !important;
+    height: auto; 
+}
