@@ -2,6 +2,27 @@ body{
     background-color: blanchedalmond;
     background-image: linear-gradient(rgb(228, 218, 202), rgb(239, 201, 193));
 }
+html {
+    height: 100%;
+    background-color: blanchedalmond;
+    background-image: linear-gradient(rgb(228, 218, 202), rgb(239, 201, 193));
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.omoss{
+    height: 100%;
+    background-color: blanchedalmond;
+    background-image: linear-gradient(rgb(228, 218, 202), rgb(239, 201, 193));
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.kontakt {
+    height: 100%;
+    background-color: blanchedalmond;
+    background-image: linear-gradient(rgb(228, 218, 202), rgb(239, 201, 193));
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 nav{
     background-color:rgb(237, 222, 202);
