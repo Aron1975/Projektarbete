@@ -58,7 +58,7 @@ fetch('https://fakestoreapi.com/products')
 
             function handleMouseEnter() {
                 additionalInfoSection.style.display = 'block';
-                productImage.style.maxWidth = "20%";
+                productImage.style.maxWidth = "40%";
             }
             
             function handleMouseLeave() {
