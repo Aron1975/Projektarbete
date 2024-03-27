@@ -93,7 +93,7 @@ input:invalid {
     max-width: 500px !important;
     height: auto; 
 }
-@media (max-width: 767.98px) {
+@media (max-width: 770px) { 
     .expanded {
         width: auto;
         height: 90%;
@@ -101,5 +101,16 @@ input:invalid {
         left: 0;
         transform: none;
         border-radius: 0; 
+    }
+}
+@media (orientation: landscape) {
+    .expanded {
+        width: 80%;
+        height: 90%;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 10px; 
     }
 }
