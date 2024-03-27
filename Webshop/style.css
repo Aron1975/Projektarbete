@@ -58,7 +58,7 @@ input:invalid {
     text-align: start;
     align-content: center;
   }
-  .expanded {
+.expanded {
     width: 80%;
     height: auto;
     position: fixed;
@@ -93,24 +93,31 @@ input:invalid {
     max-width: 500px !important;
     height: auto; 
 }
-@media (max-width: 770px) { 
+@media (max-width: 770px) and (orientation: portrait) {
     .expanded {
         width: auto;
-        height: 90%;
-        top: 0;
-        left: 0;
+        height: 98%;
+        position: fixed;
+        top: 1%;
+        left: 2%;
+        right: 2%;
+        bottom: 1%;
         transform: none;
-        border-radius: 0; 
+        border-radius: 10px;
+        overflow-y: auto; 
     }
 }
-@media (orientation: landscape) {
+@media (max-height: 1000px) and (orientation: landscape){
     .expanded {
-        width: 80%;
-        height: 90%;
+        width: auto;
+        height: 98%;
         position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 10px; 
+        top: 1%;
+        left: 2%;
+        right: 2%;
+        bottom: 1%;
+        transform: none;
+        border-radius: 10px;
+        overflow-y: auto; 
     }
 }
