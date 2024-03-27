@@ -23,6 +23,13 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
 }
+.summary {
+    height: 100%;
+    background-color: blanchedalmond;
+    background-image: linear-gradient(rgb(228, 218, 202), rgb(239, 201, 193));
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 nav{
     background-color:rgb(237, 222, 202);
@@ -52,21 +59,48 @@ input:invalid {
   }
 
   .box {
-    border: 2px solid rgb(210, 199, 221);
-    background-color: lightgray;
-    background-image: "C:/Users/Nackademin/Frontend/Projektarbete/Webshop/images/ballon768x482.jpg";
-    background-color: #cccccc;
-    background-image: linear-gradient(rgb(237, 200, 200), rgb(201, 198, 187));
-    padding: 10px;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-bottom: -20%;
-    max-width: 300px;
+    width: auto;
     height: auto;
-    text-align: center;
-    }
+    position: fixed;
+    top: 43%;
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    z-index: 9999;
+    background-image: linear-gradient(#ffffff, lightgray);
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+.tittel {
+    text-align: center; 
+    margin-top: 20px; 
+}
+#tillbaks {
+    position: fixed;
+    top: 21%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    color: lightcoral;
+}
 
-    .inline {
+.tackar {
+    font-size: 70px; 
+    font-weight: normal; 
+    font-family: 'Arial', sans-serif;
+    text-align: center; 
+    margin-bottom: 20px;
+}
+
+#orderText {
+    font-size: 18px;
+    line-height: 1.6; 
+    color: #333; 
+    margin: 10px auto; 
+    max-width: 900px; 
+    text-align: center; 
+}
+
+  .inline {
         display: block;
 
       }
@@ -155,5 +189,94 @@ input:invalid {
         border-radius: 10px;
         overflow-y: auto; 
         background-image: linear-gradient(#ffffff, lightgray);
+    }
+}
+
+@media (max-width: 770px) and (orientation: portrait) {
+    .box {
+        width: 80%;
+        height: auto;
+        position: fixed;
+        top: 70%; 
+        left: 50%; 
+        transform: translate(-50%, -50%);
+        z-index: 9999;
+        background-image: linear-gradient(#ffffff, lightgray);
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+        overflow-y: scroll; /* Enable scrolling */
+    }
+    .tittel {
+        text-align: center; 
+        margin-top: 20px; 
+    }
+    #tillbaks {
+        position: fixed;
+        top: 34%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 999;
+    }
+    
+    .tackar {
+        font-size: 30px; 
+        font-weight: normal; 
+        font-family: 'Arial', sans-serif;
+        text-align: center; 
+        margin-bottom: 20px;
+    }
+    
+    #orderText {
+        font-size: 18px;
+        line-height: 1.6; 
+        color: #333; 
+        margin: 10px auto; 
+        max-width: 900px; 
+        text-align: center; 
+    }
+}
+
+
+@media (max-height: 1000px) and (orientation: landscape) {
+    .box {
+        width: auto;
+        height: auto;
+        position: fixed;
+        top: 96%;
+        left: 2%;
+        right: 2%;
+        bottom: 1%;
+        transform: none;
+        border-radius: 10px;
+        overflow-y: auto;
+        background-image: linear-gradient(#ffffff, lightgray);
+    }
+    .tittel {
+        text-align: center; 
+        margin-top: 20px; 
+    }
+    #tillbaks {
+        position: fixed;
+        top: 70%;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 999;
+    }
+    
+    .tackar {
+        font-size: 30px; 
+        font-weight: normal; 
+        font-family: 'Arial', sans-serif;
+        text-align: center; 
+        margin-bottom: 20px;
+    }
+    
+    #orderText {
+        font-size: 18px;
+        line-height: 1.6; 
+        color: #333; 
+        margin: 10px auto; 
+        max-width: 900px; 
+        text-align: center; 
     }
 }
