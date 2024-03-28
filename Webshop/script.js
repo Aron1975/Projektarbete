@@ -47,6 +47,7 @@ fetch('https://fakestoreapi.com/products')
 
             orderButton.addEventListener('click', () => {
                 localStorage.setItem("prodId", product.id);
+                localStorage.setItem("prodTitle", product.title);
                 localStorage.setItem("Price", product.price); 
                 window.location.href = `beställning.html?productId=${product.id}`;
             });
