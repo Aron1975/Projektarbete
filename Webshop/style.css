@@ -58,32 +58,34 @@ input:invalid {
     border-radius: 5px;
   }
 
-  .box {
+  .summary .box {
     width: auto;
-    height: auto;
-    position: fixed;
-    top: 50%;
+    height: 60%;
+    position: absolute;
+    top: 69%;
     left: 50%; 
     transform: translate(-50%, -50%); 
     z-index: 9999;
     background-image: linear-gradient(#ffffff, lightgray);
     border-radius: 10px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
 }
-.tittel {
+.summary .tittel {
     text-align: center; 
     margin-top: 20px; 
 }
-#tillbaks {
-    position: fixed;
-    top: 21%;
+
+.summary #tillbaks {
+    position: absolute;
+    top: 31%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 999;
     color: lightcoral;
 }
 
-.tackar {
+.summary .tackar {
     font-size: 70px; 
     font-weight: normal; 
     font-family: 'Arial', sans-serif;
@@ -91,7 +93,7 @@ input:invalid {
     margin-bottom: 20px;
 }
 
-#orderText {
+.summary #orderText {
     font-size: 18px;
     line-height: 1.6; 
     color: #333; 
