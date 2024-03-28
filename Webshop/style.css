@@ -30,7 +30,6 @@ html {
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 nav{
     background-color:rgb(237, 222, 202);
 }
@@ -41,80 +40,30 @@ nav{
 .btn {
     margin-top: 10px;
 }
-
 .product-info { 
     background-color: rgb(210, 191, 191);
     margin-top: 48px;
 }
-
 .product-info .card {
     margin-top: 10px;
 }
-
 input:invalid {
     background-color: ivory;
     border: none;
     outline: 2px solid red;
     border-radius: 5px;
   }
-
-  .summary .box {
-    width: auto;
-    height: 60%;
-    position: absolute;
-    top: 69%;
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    z-index: 9999;
-    background-image: linear-gradient(#ffffff, lightgray);
-    border-radius: 10px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-    overflow-y: auto;
-}
-.summary .tittel {
-    text-align: center; 
-    margin-top: 20px; 
-}
-
-.summary #tillbaks {
-    position: absolute;
-    top: 31%;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 999;
-    color: lightcoral;
-}
-
-.summary .tackar {
-    font-size: 70px; 
-    font-weight: normal; 
-    font-family: 'Arial', sans-serif;
-    text-align: center; 
-    margin-bottom: 20px;
-}
-
-.summary #orderText {
-    font-size: 18px;
-    line-height: 1.6; 
-    color: #333; 
-    margin: 10px auto; 
-    max-width: 900px; 
-    text-align: center; 
-}
-
-  .inline {
+.inline {
         display: block;
 
-      }
-
-    .inline p{
+}
+.inline p{
         margin: 3px;
-    }
-
-  .container{
+}
+.container{
     text-align: start;
     align-content: center;
-  }
+}
 .expanded {
     width: 80%;
     height: auto;
@@ -127,7 +76,6 @@ input:invalid {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
     overflow: auto;
 }
-
 .expanded {
     width: 80%;
     height: auto;
@@ -193,95 +141,48 @@ input:invalid {
         background-image: linear-gradient(#ffffff, lightgray);
     }
 }
-
-@media (max-width: 600px) and (orientation: portrait) {
-    .summary .box {
-        width: 80%;
-        height: auto;
-        position: absolute;
-        top: 90%;
-        left: 50%; 
-        transform: translate(-50%, -50%); 
+@media (min-height: 700px) and (orientation: landscape){
+    .summary {
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         z-index: 9999;
-        background-image: linear-gradient(#ffffff, lightgray);
         border-radius: 10px;
         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
         overflow-y: auto;
+        background-color: #fff; 
     }
-    .summary .tittel {
-        text-align: center; 
-        margin-top: 20px; 
+    .summary .title {
+        text-align: center;
+        margin-top: 10px;
+        position: relative; 
     }
-    
     .summary #tillbaks {
         position: absolute;
-        top: 45%;
+        bottom: 10%; 
         left: 50%;
         transform: translateX(-50%);
         z-index: 999;
         color: lightcoral;
     }
-    
     .summary .tackar {
-        font-size: 40px; 
-        font-weight: normal; 
+        font-size: 60px;
+        font-weight: normal;
         font-family: 'Arial', sans-serif;
-        text-align: center; 
         margin-bottom: 20px;
+        position: relative; 
     }
-    
     .summary #orderText {
-        font-size: 18px;
-        line-height: 1.6; 
-        color: #333; 
-        margin: 10px auto; 
-        max-width: 900px; 
-        text-align: center; 
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+        margin: 10px auto;
+        max-width: 900px;
+        position: relative;
     }
 }
-
-@media (max-height: 800px) and (orientation: landscape) {
-
-        .summary .box {
-            width: auto;
-            height: 90%;
-            position: absolute;
-            top: 140%;
-            transform: translate(-50%, -50%); 
-            z-index: 9999;
-            background-image: linear-gradient(#ffffff, lightgray);
-            border-radius: 10px;
-            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-            overflow-y: auto;
-        }
-        .summary .tittel {
-            text-align: center; 
-            margin-top: 20px; 
-        }
-        
-        .summary #tillbaks {
-            position: absolute;
-            top: 70%;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 999;
-            color: lightcoral;
-        }
-        
-        .summary .tackar {
-            font-size: 40px; 
-            font-weight: normal; 
-            font-family: 'Arial', sans-serif;
-            text-align: center; 
-            margin-bottom: 20px;
-        }
-        
-        .summary #orderText {
-            font-size: 18px;
-            line-height: 1.6; 
-            color: #333; 
-            margin: 10px auto; 
-            max-width: 900px; 
-            text-align: center; 
-        }
-    }
+    
